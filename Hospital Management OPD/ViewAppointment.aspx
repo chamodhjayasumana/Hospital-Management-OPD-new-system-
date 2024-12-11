@@ -14,9 +14,11 @@
                     </ItemTemplate>
                 </asp:TemplateField>
                 <asp:BoundField DataField="appointment_id" HeaderText="Appointment ID" />
+                
                 <asp:BoundField DataField="appointment_date" HeaderText="Appointment Date" DataFormatString="{0:yyyy-MM-dd HH:mm}" />
                 <asp:BoundField DataField="reason_for_visit" HeaderText="Reason for Visit" />
                 <asp:BoundField DataField="status" HeaderText="Status" />
+                <asp:BoundField DataField="appointment_number" HeaderText="Appointment No" />
                 <asp:BoundField DataField="doctor_name" HeaderText="Doctor" />
             </Columns>
         </asp:GridView>

@@ -14,6 +14,18 @@ namespace Hospital_Management_OPD
 
         private DB_Connection db = new DB_Connection();
 
+
+        public DataTable GetAllDoctors()
+        {
+            using (SqlConnection conn = db.GetConnection())
+            {
+                SqlDataAdapter da = new SqlDataAdapter("SELECT doctor_id, CONCAT(first_name, ' ', last_name) AS full_name FROM Doctors", conn);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+                return dt;
+            }
+        }
+
         //insert a new docter 
         public bool InsertDoctor(string firstName, string lastName, string specialization, string phoneNumber, string email, int departmentId)
         {
@@ -183,6 +195,40 @@ namespace Hospital_Management_OPD
 
 
 
+        public DataTable GetAvailableDoctorsWithDepartments(DateTime date)
+        {
+            using (SqlConnection conn = db.GetConnection())
+            {
+                using (SqlCommand cmd = new SqlCommand("GetAvailableDoctorsWithDepartments", conn))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@date", date);
+
+                    SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+                    DataTable dt = new DataTable();
+                    adapter.Fill(dt);
+                    return dt;
+                }
+            }
+        }
+
+        public DataTable GetAppointmentsByDoctorAndDate(int doctorId, DateTime date)
+        {
+            using (SqlConnection conn = db.GetConnection())
+            {
+                using (SqlCommand cmd = new SqlCommand("GetAppointmentsByDoctors", conn))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@doctor_id", doctorId);
+                    cmd.Parameters.AddWithValue("@appointment_date", date);
+
+                    SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+                    DataTable dt = new DataTable();
+                    adapter.Fill(dt);
+                    return dt;
+                }
+            }
+        }
 
 
 

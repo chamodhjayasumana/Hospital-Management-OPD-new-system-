@@ -192,6 +192,8 @@
     <Content Include="Login.aspx" />
     <Content Include="MakePayment.aspx" />
     <Content Include="ManageDoctors.aspx" />
+    <Content Include="ManageDoctorSessions.aspx" />
+    <Content Include="NewDahboard.aspx" />
     <Content Include="PatientMedicalRecords.aspx" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
@@ -263,6 +265,7 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="UpdateDoctor.aspx" />
+    <Content Include="UpdateDSession.aspx" />
     <Content Include="UpdateMedicalRecord.aspx" />
     <Content Include="UpdatePatient.aspx" />
     <Content Include="ViewAppointment.aspx" />
@@ -333,6 +336,7 @@
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
+    <Compile Include="App_Data\DoctorSession_DB.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -358,6 +362,20 @@
       <DependentUpon>ManageDoctors.aspx</DependentUpon>
     </Compile>
     <Compile Include="App_Data\Paiment_DB.cs" />
+    <Compile Include="ManageDoctorSessions.aspx.cs">
+      <DependentUpon>ManageDoctorSessions.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ManageDoctorSessions.aspx.designer.cs">
+      <DependentUpon>ManageDoctorSessions.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="NewDahboard.aspx.cs">
+      <DependentUpon>NewDahboard.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="NewDahboard.aspx.designer.cs">
+      <DependentUpon>NewDahboard.aspx</DependentUpon>
+    </Compile>
     <Compile Include="PatientMedicalRecords.aspx.cs">
       <DependentUpon>PatientMedicalRecords.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -387,6 +405,13 @@
     </Compile>
     <Compile Include="UpdateDoctor.aspx.designer.cs">
       <DependentUpon>UpdateDoctor.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UpdateDSession.aspx.cs">
+      <DependentUpon>UpdateDSession.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UpdateDSession.aspx.designer.cs">
+      <DependentUpon>UpdateDSession.aspx</DependentUpon>
     </Compile>
     <Compile Include="UpdateMedicalRecord.aspx.cs">
       <DependentUpon>UpdateMedicalRecord.aspx</DependentUpon>

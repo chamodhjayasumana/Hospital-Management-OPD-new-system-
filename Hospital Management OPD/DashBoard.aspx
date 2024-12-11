@@ -43,7 +43,7 @@
             color: #333;
         }
     </style>
-
+    <asp:Button ID="Button1" runat="server" Text="Button" OnClick="Button1_Click" />
     <div class="doctor-container">
         <!-- Repeater for displaying doctors -->
         <asp:Repeater ID="rptDoctors" runat="server" OnItemDataBound="rptDoctors_ItemDataBound">

@@ -175,6 +175,19 @@ namespace Hospital_Management_OPD
 
                 if (success)
                 {
+                    // After the appointment is created, assign appointment numbers
+                    bool numberAssigned =  Appoint.AssignAppointmentNumber(doctorId, appointmentDate, appointmentTime.ToString());
+                    if (numberAssigned)
+                    {
+                        lblMessage.Visible = true;
+                        lblMessage.Text = "Appointment created and appointment numbers assigned successfully!";
+                        lblMessage.CssClass = "text-success";
+                    }
+                    
+
+
+
+
                     Session.Remove("PatientId");
                     ClearForm();
                 }
@@ -186,6 +199,7 @@ namespace Hospital_Management_OPD
                 lblMessage.CssClass = "text-danger";
             }
         }
+
 
         private void ClearForm()
         {

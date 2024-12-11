@@ -94,6 +94,7 @@ namespace Hospital_Management_OPD
             }
             else
             {
+
                 lblMessage.Text = "Please select an appointment to add a medical record.";
             }
         }

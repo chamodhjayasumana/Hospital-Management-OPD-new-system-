@@ -62,6 +62,9 @@
                         <li class="nav-item"><a class="nav-link" runat="server" href="~/ViewPatients">View Patients</a></li>
                         <li class="nav-item"><a class="nav-link" runat="server" href="~/AddAppointment">Add Appointment</a></li>
                         <li class="nav-item"><a class="nav-link" runat="server" href="~/ManageDoctors">Manage Doctors</a></li>
+                        
+                        <li class="nav-item"><a class="nav-link" runat="server" href="~/UpdateDSession">Doctors Sessions</a></li>
+
                         <li class="nav-item"><a class="nav-link" href="ViewMedicalRecords.aspx">Medical Records</a></li>
                         <li class="nav-item"><a class="nav-link" href="MakePayment.aspx">Make Payment</a></li>
                         <li class="nav-item"><a class="nav-link" href="ViewReports.aspx">ViewReports</a></li>

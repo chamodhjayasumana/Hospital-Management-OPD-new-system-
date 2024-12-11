@@ -184,6 +184,68 @@ namespace Hospital_Management_OPD
         }
 
 
+        //public void AssignAppointmentNumbers(int doctorId, DateTime sessionDate, string sessionTime)
+        //{
+        //    using (SqlConnection conn = db.GetConnection())
+        //    {
+        //        try
+        //        {
+        //            // Open the connection
+        //            conn.Open();
+
+        //            // Create command to call stored procedure
+        //            using (SqlCommand cmd = new SqlCommand("AssignAppointmentNumbers", conn))
+        //            {
+        //                cmd.CommandType = CommandType.StoredProcedure;
+
+        //                // Add parameters to the stored procedure
+        //                cmd.Parameters.AddWithValue("@doctor_id", doctorId);
+        //                cmd.Parameters.AddWithValue("@session_date", sessionDate);
+        //                cmd.Parameters.AddWithValue("@session_time", sessionTime);
+
+        //                // Execute the stored procedure
+        //                cmd.ExecuteNonQuery();
+        //            }
+        //        }
+        //        catch (Exception ex)
+        //        {
+        //            // Log the exception or handle it as needed
+        //            throw new Exception("An error occurred while assigning appointment numbers: " + ex.Message);
+        //        }
+        //    }
+        //}
+
+        public bool AssignAppointmentNumber(int doctorId, DateTime sessionDate, string sessionTime)
+        {
+            using (SqlConnection conn = db.GetConnection())
+            {
+                try
+                {
+                    SqlCommand cmd = new SqlCommand("AssignAppointmentNumbers", conn);
+                    cmd.CommandType = CommandType.StoredProcedure;
+
+                    cmd.Parameters.AddWithValue("@doctor_id", doctorId);
+                    cmd.Parameters.AddWithValue("@session_date", sessionDate);
+                    cmd.Parameters.AddWithValue("@session_time", sessionTime);
+
+                    conn.Open();
+                    cmd.ExecuteNonQuery();  // Execute the stored procedure
+                    conn.Close();
+
+                    return true;
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine("Error: " + ex.Message);
+                    return false;
+                }
+            }
+        }
+
+
+
+
+
 
     }
 }
